@@ -11,12 +11,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>{{}}</td>
-            <td>{{}}</td>
-            <td>{{}}</td>
-          </tr>
+            @forelse ($posts as $post)
+                <tr>
+                    <th scope="row">1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            @empty
+              <tr> <td class="text-center" colspan="4" >Non ci sono post</td> </tr>
+            @endforelse
         </tbody>
       </table>
 </div>  
