@@ -26,3 +26,9 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('Admin')->
     // creazione delle rotte per i post
     Route::resource('posts', 'PostController');
 });
+
+// rotte utenti 
+
+Route::get("{any}", function () {
+    return view('guest.home');
+})->where("any", ".*");
