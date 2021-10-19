@@ -26,7 +26,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $post = new post();
+        return view('admin.posts.create', compact('post'));
     }
 
     /**
@@ -37,7 +38,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // recupero dati nuovi
+        $data = $request->all();
+
+        // inserimento dati
+        $new_post = new Post;
+        $new_post->title = $data['title'];
+        $new_post->author = $data['author'];
+        $new_post->content = $data['content'];
+
+
+        $new_post->save();
+
+        return redirect()->route('admin.posts.show', $new_post->id);
     }
 
     /**
@@ -57,9 +70,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -69,9 +82,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->all();
+
+        $post->update($data);
+
+        return view('admin.posts.show', compact('post'));
     }
 
     /**

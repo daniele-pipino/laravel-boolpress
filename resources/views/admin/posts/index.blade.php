@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <div class="d-flex justify-content-end">
+        <a href="{{route('admin.posts.create')}}" class="btn btn-success">Crea</a>
+    </div>
     <table class="table">
         <thead>
           <tr>
@@ -17,7 +20,11 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->author}}</td>
                     <td>{{$post->created_at}}</td>
-                    <td><a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-primary">Vedi</a></td>
+                    <td class="d-flex justify-content-end">
+                        <a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-primary">Vedi</a>
+                        <a href="{{route('admin.posts.edit',$post->id)}}" class="btn btn-warning ml-2">Modifica</a>
+
+                    </td>
                 </tr>
             @empty
               <tr> <td class="text-center" colspan="4" >Non ci sono post</td> </tr>
