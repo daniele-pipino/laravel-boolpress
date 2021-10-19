@@ -22,4 +22,7 @@ Auth::routes(['register' => false]);
 Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('Admin')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('home');
+
+    // creazione delle rotte per i post
+    Route::resource('posts', 'PostController');
 });
