@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+@if (session('type'))
+    <div class="alert alert-{{session('type')}}" role="alert">
+        {{session('msg')}}
+    </div>
+@endif
 <div class="container">
     <div class="d-flex justify-content-end">
         <a href="{{route('admin.posts.create')}}" class="btn btn-success">Crea</a>
@@ -23,10 +28,10 @@
                     <td class="d-flex justify-content-end">
                         <a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-primary">Vedi</a>
                         <a href="{{route('admin.posts.edit',$post->id)}}" class="btn btn-warning ml-2">Modifica</a>
-                        <form action="{{route('admin.posts.destroy')}}" method="post">
+                        <form action="{{route('admin.posts.destroy',$post->id)}}" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-danger">Cestina</button>
+                            <button type="submit" class="btn btn-danger ml-2">Cestina</button>
                         </form>
                     </td>
                 </tr>
