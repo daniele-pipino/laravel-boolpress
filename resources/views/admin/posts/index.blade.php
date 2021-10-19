@@ -13,10 +13,11 @@
         <tbody>
             @forelse ($posts as $post)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$post->id}}</th>
                     <td>{{$post->title}}</td>
                     <td>{{$post->author}}</td>
                     <td>{{$post->created_at}}</td>
+                    <td><a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-primary">Vedi</a></td>
                 </tr>
             @empty
               <tr> <td class="text-center" colspan="4" >Non ci sono post</td> </tr>
