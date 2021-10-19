@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-      @if ($post->exist)
-         <h1 class="text-center">Modifica Post</h1>
-         <form action="{{route('admin.posts.update',$post->id)}}" method="post">
-          @method('patch')
+      @if ($post->id)
+          <h1 class="text-center">Modifica Post</h1>
+          <form action="{{route('admin.posts.update',$post->id)}}" method="post">
+            @method('patch')
       @else
           <h1 class="text-center">Crea Post</h1>
           <form action="{{route('admin.posts.store')}}" method="post">

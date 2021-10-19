@@ -23,7 +23,11 @@
                     <td class="d-flex justify-content-end">
                         <a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-primary">Vedi</a>
                         <a href="{{route('admin.posts.edit',$post->id)}}" class="btn btn-warning ml-2">Modifica</a>
-
+                        <form action="{{route('admin.posts.destroy')}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Cestina</button>
+                        </form>
                     </td>
                 </tr>
             @empty
