@@ -1,11 +1,11 @@
 <template>
-  <div class="card">
-    <div class="card-header">Quote</div>
+  <div class="card my-5">
+    <h3 class="card-header text-primary">{{ post.title }}</h3>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>A well-known quote, contained in a blockquote element.</p>
+        <p>{{ post.content }}</p>
         <footer class="blockquote-footer">
-          Someone famous in <cite title="Source Title">Source Title</cite>
+          AUTHOR: <cite title="Source Title">{{ post.author }}</cite>
         </footer>
       </blockquote>
     </div>
@@ -15,6 +15,7 @@
 <script>
 export default {
   name: "PostCard",
+  props: ["post"],
 };
 </script>
 
