@@ -1,19 +1,15 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Benvenuti nel sito</div>
-
-          <div class="card-body">In costruzione...</div>
-        </div>
-      </div>
-    </div>
+    <PostList />
   </div>
 </template>
 
 <script>
+import PostList from "./Post/PostList.vue";
 export default {
   name: "App",
+  components: {
+    PostList,
+  },
 };
 </script>
