@@ -15,6 +15,7 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
+            <th scope="col">Category</th>
             <th scope="col">Created at</th>
           </tr>
         </thead>
@@ -24,6 +25,7 @@
                     <th scope="row">{{$post->id}}</th>
                     <td>{{$post->title}}</td>
                     <td>{{$post->author}}</td>
+                    <td>{{$category->name}}</td>
                     <td>{{$post->created_at}}</td>
                     <td class="d-flex justify-content-end">
                         <a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-primary">Vedi</a>

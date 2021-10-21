@@ -27,7 +27,7 @@
               <select name="category_id" id="category" class="form-control mb-3">
                 <option value="null" selected>Nessuna Categoria</option> 
                  @foreach ($categories as $category)
-                    <option value="{{$category->name}}">{{$category->name}}</option>
+                    <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
               </select>
             </div>
