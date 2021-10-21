@@ -15,12 +15,18 @@
               <input type="text" class="form-control" id="title" name="title" value="{{$post->title}}" placeholder="Inserisci il titolo">
             </div>
             <div class="form-group">
-                <label for="author">Email address</label>
+                <label for="author">Author</label>
                 <input type="text" class="form-control" id="author" name="author" value="{{$post->author}}" placeholder="Inserisci l'autore">
             </div>
             <div class="form-group">
               <label for="content">Content</label>
               <textarea class="form-control" id="content" name="content" rows="3">{{$post->content}}</textarea>
+            </div>
+            <div>
+              <label for="category">Category</label>
+              <select name="category_id" id="category" class="form-control mb-3">
+                <option value="null">Nessuna Categoria</option>
+              </select>
             </div>
             <div>
               <button type="submit" class="btn btn-outline-primary">Salva</button>
