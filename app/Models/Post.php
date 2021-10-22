@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     // campi fillabili
-    protected $fillable = ['title', 'author', 'content', 'category_id'];
+    protected $fillable = ['title', 'author', 'content', 'category_id', 'user_id'];
 
     // correlazione modello 
     public function category()
