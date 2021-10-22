@@ -4,7 +4,11 @@
         <div class="card">
             <div class="card-body">
               <h1 class="card-title">{{$post->title}}</h1>
-              <h4 class="card-subtitle mb-2 text-muted">Author: {{$post->author}}</h4>
+              <h4 class="card-subtitle mb-2 text-muted">Author: @if ($post->user)
+                {{$post->user->name}}
+              @else
+                  Anonimo
+              @endif</h4>
               <p class="card-text">{{$post->content}}</p>
               @if ($post->category)
                 <p class="card-text">Category: {{$post->category->name}}</p>
