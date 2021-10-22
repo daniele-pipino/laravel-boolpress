@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -52,6 +53,8 @@ class PostController extends Controller
 
         // istanza nuovo post
         $new_post = new Post();
+
+        $data['user_id'] = Auth::id();
 
         // inserimenmto dei dati
         $new_post->fill($data);
