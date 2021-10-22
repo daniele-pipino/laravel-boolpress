@@ -26,7 +26,7 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->author}}</td>
                     <td>@if ($post->category)
-                        {{$post->category->name}} 
+                        <span class="badge badge-pill badge-{{$post->category->color}}">{{$post->category->name}}</span>
                         @else Sconosciuta
                     @endif</td>
                     <td>{{$post->created_at}}</td>
