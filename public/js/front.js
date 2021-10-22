@@ -1952,8 +1952,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostCard",
   props: ["post"]
@@ -37708,7 +37706,7 @@ var render = function() {
           _vm._v(" "),
           _c("p", [
             _vm._v("\n          Categoria:\n          "),
-            _c("span", { staticClass: "badge badge-pill badge-" }, [
+            _c("span", { staticClass: "fs-3" }, [
               _vm._v(_vm._s(_vm.post.category.name))
             ])
           ])

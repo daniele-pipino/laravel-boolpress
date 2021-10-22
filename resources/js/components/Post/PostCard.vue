@@ -8,9 +8,7 @@
           AUTHOR: <cite title="Source Title">{{ post.author }}</cite>
           <p>
             Categoria:
-            <span class="badge badge-pill badge-">{{
-              post.category.name
-            }}</span>
+            <span class="fs-3">{{ post.category.name }}</span>
           </p>
         </footer>
       </blockquote>
