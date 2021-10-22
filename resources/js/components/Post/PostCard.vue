@@ -6,7 +6,7 @@
         <p>{{ post.content }}</p>
         <footer class="blockquote-footer">
           AUTHOR: <cite title="Source Title">{{ post.author }}</cite>
-          <p>Categoria:{{ post.category }}</p>
+          <p>Categoria: {{ post.category.name }}</p>
         </footer>
       </blockquote>
     </div>

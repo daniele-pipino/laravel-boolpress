@@ -13,14 +13,21 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         // categorie di post da inserire nel db
-        $category_names = ['Photography', 'Food', 'RealEstate', 'stylistics', 'Automotive', 'Tech'];
+        $categories = [
+            ['name' => 'Photography', 'color' => 'info'],
+            ['name' => 'Food', 'color' => 'warning'],
+            ['name' => 'RealEstate', 'color' => 'warning'],
+            ['name' => 'stylistics', 'color' => 'primary'],
+            ['name' => 'Automotive', 'color' => 'secondary'],
+            ['name' => 'Tech', 'color' => 'dark']
+        ];
 
-        foreach ($category_names as $name) {
-            $category = new Category();
+        foreach ($categories as $category) {
+            $new_category = new Category();
 
-            $category->name = $name;
-
-            $category->save();
+            $new_category->name = $category['name'];
+            $new_category->color = $category['color'];
+            $new_category->save();
         }
     }
 }

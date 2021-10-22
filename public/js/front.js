@@ -37701,7 +37701,7 @@ var render = function() {
             _vm._v(_vm._s(_vm.post.author))
           ]),
           _vm._v(" "),
-          _c("p", [_vm._v("Categoria:" + _vm._s(_vm.post.category))])
+          _c("p", [_vm._v("Categoria: " + _vm._s(_vm.post.category.name))])
         ])
       ])
     ])
