@@ -25,7 +25,10 @@
                     <th scope="row">{{$post->id}}</th>
                     <td>{{$post->title}}</td>
                     <td>{{$post->author}}</td>
-                    <td>{{$category->name}}</td>
+                    <td>@if ($post->category)
+                        {{$post->category->name}} 
+                        @else Sconosciuta
+                    @endif</td>
                     <td>{{$post->created_at}}</td>
                     <td class="d-flex justify-content-end">
                         <a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-primary">Vedi</a>

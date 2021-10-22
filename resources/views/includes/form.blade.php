@@ -25,9 +25,11 @@
             <div>
               <label for="category">Category</label>
               <select name="category_id" id="category" class="form-control mb-3">
-                <option value="null" selected>Nessuna Categoria</option> 
+                <option>Nessuna Categoria</option> 
                  @foreach ($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    <option @if (old('category-id') == $category->id)
+                        selected
+                    @endif value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
               </select>
             </div>

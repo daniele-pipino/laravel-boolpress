@@ -16,8 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        $category = Category::all();
         $posts = Post::all();
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'category'));
     }
 
     /**
@@ -40,15 +41,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        // validazione datis
+        $request->validate([
+            'category_id' => 'nullable|exists:categories,id',
+        ]);
+
         // recupero dati nuovi
         $data = $request->all();
 
-        // inserimento dati
-        $new_post = new Post;
-        $new_post->title = $data['title'];
-        $new_post->author = $data['author'];
-        $new_post->content = $data['content'];
+        // istanza nuovo post
+        $new_post = new Post();
 
+        // inserimenmto dei dati
+        $new_post->fill($data);
 
         $new_post->save();
 
@@ -61,8 +67,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
+        $post = Post::find($id);
         return view('admin.posts.show', compact('post'));
     }
 
@@ -87,6 +94,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        // validazione
+        $request->validate([
+            'category_id' => 'nullable|exists:categories,id',
+        ]);
+
         $data = $request->all();
 
         $post->update($data);
