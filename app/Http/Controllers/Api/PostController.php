@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Tag;
 use App\Models\Category;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('category')->get();
+        $posts = Post::with('category', 'tags')->get();
         return response()->json($posts);
     }
 
