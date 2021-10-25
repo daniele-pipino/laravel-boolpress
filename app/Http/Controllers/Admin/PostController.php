@@ -49,6 +49,7 @@ class PostController extends Controller
         // validazione datis
         $request->validate([
             'category_id' => 'nullable|exists:categories,id',
+            'tags' => 'nullable|exists:tags,id',
         ]);
 
         // recupero dati nuovi
@@ -107,6 +108,7 @@ class PostController extends Controller
         // validazione
         $request->validate([
             'category_id' => 'nullable|exists:categories,id',
+            'tags' => 'nullable|exists:tags,id',
         ]);
 
         $data = $request->all();
