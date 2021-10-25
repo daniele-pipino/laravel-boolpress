@@ -22,6 +22,7 @@
               <label for="content">Content</label>
               <textarea class="form-control" id="content" name="content" rows="3">{{$post->content}}</textarea>
             </div>
+            {{-- category section --}}
             <div>
               <label for="category">Category</label>
               <select name="category_id" id="category" class="form-control mb-3">
@@ -32,6 +33,17 @@
                     @endif value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
               </select>
+            </div>
+            {{-- tag section --}}
+            <div class="form-check mb-3">
+              @forelse ($tags as $tag)
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="{{$tag->id}}" value="{{$tag->id}}">
+                  <label class="form-check-label" for="{{$tag->id}}">{{$tag->name}}</label>
+                </div>
+              @empty
+                <h4>No tags available...</h4>    
+              @endforelse
             </div>
             <div>
               <button type="submit" class="btn btn-outline-primary">Salva</button>
