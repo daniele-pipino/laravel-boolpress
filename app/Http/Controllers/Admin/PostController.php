@@ -92,7 +92,11 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $tags = Tag::all();
+
+        // verifica tag checked
         $tagsId = $post->tags->pluck('id')->toArray();
+
+        // return view
         return view('admin.posts.edit', compact('post', 'categories', 'tags', 'tagsId'));
     }
 

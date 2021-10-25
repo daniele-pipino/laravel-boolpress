@@ -15,6 +15,15 @@
               @else 
               <p class="card-text">Category: Sconosciuta</p>
               @endif
+              <div class="mb-3">
+                @forelse ($post->tags as $tag)
+                   <span class="text-primary">#{{$tag->name}} </span>  
+              @empty
+                   <span class="text-primary"> #</span>
+              @endforelse
+
+              </div>
+              
               <a href="{{route('admin.posts.index')}}" class="btn btn-outline-secondary">Go Back</a>
             </div>
           </div>

@@ -37,9 +37,9 @@
                     <td>
                         
                         @forelse ($post->tags as $tag)
-                          -{{$tag->name}}-   
+                          #{{$tag->name}}   
                         @empty
-                            -
+                            #
                         @endforelse
                     </td>
                     {{-- categoria --}}
