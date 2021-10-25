@@ -38,7 +38,7 @@
             <div class="form-check mb-3">
               @forelse ($tags as $tag)
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="{{$tag->id}}" value="{{$tag->id}}" name="tags[]" @if(in_array($tag->id , old('tags', []))) checked @endif>
+                  <input class="form-check-input" type="checkbox" id="{{$tag->id}}" value="{{$tag->id}}" name="tags[]" @if(in_array($tag->id , old('tags', $tagsId ?? []))) checked @endif>
                   <label class="form-check-label" for="{{$tag->id}}">{{$tag->name}}</label>
                 </div>
               @empty
