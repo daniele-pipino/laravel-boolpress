@@ -64,6 +64,8 @@ class PostController extends Controller
 
         $new_post->save();
 
+        if (array_key_exists('tags', $data)) $new_post->tags()->attach($data['tags']);
+
         return redirect()->route('admin.posts.show', $new_post->id);
     }
 
